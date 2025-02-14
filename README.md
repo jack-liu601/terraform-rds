@@ -1,12 +1,10 @@
 ## Task: Create a production grade terraform stack which creates the following:
 
 1. AWS RDS Instnace:
-      Features required:
-      ■ Consider any compatible instance type
-      ■ Min 13000 IOPS required. (Use cost effective
-        method in choosing IOPS)
-      ■ Enable IAM authentication and grant required
-        permissions to the application to connect.
+      - Features required:
+              - Consider any compatible instance type
+              - Min 13000 IOPS required. (Use cost effective method in choosing IOPS)
+              - Enable IAM authentication and grant required ermissions to the application to connect.
 3. AWS subnet group
 4. AWS security group with rules which allows secure connection
 from the application.
