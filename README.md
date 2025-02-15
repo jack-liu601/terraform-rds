@@ -8,8 +8,6 @@ Consider both the above VPCs in the same network.<br />
 Application assumes the following IAM role:<br />
 &nbsp; arn:aws:iam::123456789101:role/application/example-app.<br />
 
-
-
 ### Task: Create a production grade terraform stack which creates the following:
 1. AWS RDS Instance:<br />
       - Features required:<br />
@@ -28,5 +26,9 @@ parameters. <br />
    rds.log_retention_period: 1440 <br />
 
 
-### Pre-assumptions: 
-1. 
+### Own Assumptions: 
+1. RDS VPC has already been created with a VPC ID given that there was provided RDS Cluster VPC CIDR. <br/>
+Similarly given that VPC has already been created an min. of 1 subnet would exist already. <br /> 
+Therefore the focus will be on creating & deploying a RDS instance & related resources using terraform for an application
+
+2. 
