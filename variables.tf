@@ -14,3 +14,8 @@ variable "rds_subnet_ids" {
   description = "List of Subnet IDs for RDS subnet group"
   type        = list(string)
 }
+
+variable "app_role_arn" {
+  description = "arn of the application role that will be accessing the database"
+  type        = string
+}
