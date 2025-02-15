@@ -1,9 +1,9 @@
-output "rds_endpoint" {
+output "prod_rds_endpoint" {
   description = "Production RDS endpoint"
-  value       = aws_db_instance.rds_instance.endpoint
+  value       = aws_db_instance.prod_rds_instance.endpoint
 }
 
-output "rds_security_group_id" {
+output "prod_rds_sg_id" {
   description = "Production RDS Security group ID"
-  value       = aws_security_group.rds_security_group.ids
+  value       = aws_security_group.prod_rds_sg.ids
 }
