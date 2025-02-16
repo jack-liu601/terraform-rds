@@ -4,8 +4,8 @@ Create a RDS instance and related resources using terraform for an application t
 ## Background: 
 Assumptions: <br />
 VPCS: <br />
-EKS Cluster VPC (k8s 10.2.0.0/16) <br />
-RDS Cluster VPC (Data 10.5.0.0/16) <br />
+&nbsp; EKS Cluster VPC (k8s 10.2.0.0/16) <br />
+&nbsp; RDS Cluster VPC (Data 10.5.0.0/16) <br />
 Consider both the above VPCs in the same network.<br />
 
 Application assumes the following IAM role:<br />
