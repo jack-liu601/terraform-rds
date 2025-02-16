@@ -4,7 +4,7 @@ variable "rds_vpc_id" {
 }
 
 variable "eks_vpc_cidr" {
-  description = "CIDR block for EKS VPC"
+  description = "(Optional) CIDR block for EKS VPC"
   type        = string
   default     = "10.2.0.0/16"
 }
