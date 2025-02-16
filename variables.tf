@@ -1,4 +1,3 @@
-# Variables for flexibility
 variable "rds_vpc_id" {
   description = "(Required) VPC ID for RDS"
   type        = string
