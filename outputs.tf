@@ -5,5 +5,5 @@ output "prod_rds_endpoint" {
 
 output "prod_rds_sg_id" {
   description = "Production RDS Security group ID"
-  value       = aws_security_group.prod_rds_sg.ids
+  value       = aws_security_group.prod_rds_sg.id
 }

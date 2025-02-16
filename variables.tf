@@ -15,7 +15,7 @@ variable "rds_subnet_ids" {
   type        = list(string)
 }
 
-variable "app_role_arn" {
-  description = "arn of the application role that will be accessing the database"
+variable "app_role_name" {
+  description = "name of the application role that will be accessing the database"
   type        = string
 }
