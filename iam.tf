@@ -1,3 +1,8 @@
+/*
+Justification: 
+As per stated in the README.md we assume that an existing application/example-app role has already been created. 
+Therefore the focus is to add additional permissions and grants in order to allow this role to authenticae to the DB
+*/
 resource "aws_iam_role_policy_attachment" "prod_rds_policy_attachment" {
   role       = var.app_role_name
   policy_arn = aws_iam_policy.prod_rds_connect_policy.arn

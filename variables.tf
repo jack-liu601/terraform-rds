@@ -1,6 +1,6 @@
 # Variables for flexibility
 variable "rds_vpc_id" {
-  description = "VPC ID for RDS"
+  description = "(Required) VPC ID for RDS"
   type        = string
 }
 
@@ -11,11 +11,11 @@ variable "eks_vpc_cidr" {
 }
 
 variable "rds_subnet_ids" {
-  description = "List of Subnet IDs for RDS subnet group"
+  description = "(Required) List of Subnet IDs for RDS subnet group"
   type        = list(string)
 }
 
 variable "app_role_name" {
-  description = "name of the application role that will be accessing the database"
+  description = "(Required) name of the application role that will be accessing the database"
   type        = string
 }

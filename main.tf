@@ -1,7 +1,14 @@
+/*
+  Justification:
+  Selected m series graviton instance type due to cost and performance versus the rest of the instance type.
+  The brief does not have an requirement in terms of instance type. 
+  In addition gp3 storage type over io1 / io2 due to cost as there was no requirement for max iops but only min. 13000 IOPS
+*/
+
 # RDS Instance
 resource "aws_db_instance" "prod_rds_instance" {
   identifier                          = "prod-devops-rds-instance"
-  instance_class                      = "db.m5.xlarge"
+  instance_class                      = "db.m6g.xlarge"
   allocated_storage                   = 500   # Min storage for 13,000 IOPS = 500
   max_allocated_storage               = 1000  # Allows auto-scaling
   iops                                = 13000 # Provisioned IOPS
@@ -15,7 +22,6 @@ resource "aws_db_instance" "prod_rds_instance" {
   storage_type                        = "gp3" # Select gp3 over io1 / io2 due to cost as there was no requirement for max iops but only min. 13000 IOPS
   multi_az                            = true
   iam_database_authentication_enabled = true
-  skip_final_snapshot                 = true
   username                            = "dbsuperuser"
   manage_master_user_password         = true
   tags = {
@@ -54,6 +60,7 @@ resource "aws_db_subnet_group" "prod_rds_subnet_group" {
   }
 }
 
+
 # Security Group for RDS
 resource "aws_security_group" "prod_rds_sg" {
   name        = "prod-devops-rds-sg"
@@ -65,6 +72,7 @@ resource "aws_security_group" "prod_rds_sg" {
     from_port   = 5432
     to_port     = 5432
     protocol    = "tcp"
+    # Only allowing ingress connection from EKS App CIDR for security purposes
     cidr_blocks = [var.eks_vpc_cidr]
   }
 

@@ -27,8 +27,41 @@ parameters. <br />
 
 
 ### Own Assumptions: 
-1. RDS VPC has already been created with a VPC ID given that there was provided RDS Cluster VPC CIDR. <br/>
+1. RDS VPC & EKS VPC has already been created with a VPC ID given the brief included VPC CIDRs a;already<br/>
 Similarly given that VPC has already been created an min. of 1 subnet would exist already. <br /> 
-Therefore the focus will be on creating & deploying a RDS instance & related resources using terraform for an application
+Therefore the focus will be on creating & deploying a RDS instance & related resources using terraform for an EKS application instead of VPC networking.
 
-2. 
+2. Given that brief states that "Application assumes the following IAM role: arn:aws:iam::123456789101:role/application/example-app" Therefore the assumptions is that an IAM role of application/example-app has already been created.
+
+3. Given that RDS Prod DB has yet to be created. In order to allow application to access the DB via IAM authentication and DB user will need to be created after RDS creation.
+
+
+
+### How to Deploy 
+#### Pre-requisite: 
+Based on the brief there are 3 required variables in order to successfully deploy this terraform stack:. 
+1. rds_vpc_id
+2. rds_subnet_ids
+3. app_role_name
+
+A preferred method of deployment will be by creating an .tfvars file for a easy smooth deployment 
+
+```
+Example prod.tfvars file 
+
+rds_vpc_id = "<RDS VPC ID>"
+
+rds_subnet_ids = ["<subnet-id>", or "<subnet-ids>]
+
+app_role_name = "<EKS role name>"
+```
+
+Once an .tfvars file has been created you can look to deployed required prod rds stack with the following command:
+```
+terraform apply -var-file="prod.tfvars" 
+```
+
+
+
+
+

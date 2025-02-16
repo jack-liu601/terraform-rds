@@ -10,6 +10,7 @@ terraform {
 
 provider "aws" {
   region = "ap-southeast-2"
+  # Default tag ensuring that minimum tagging standards are applied when deployed via terraform.
   default_tags {
     tags = {
       Environment = "prod"
@@ -20,11 +21,11 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    # Assumption on the bucket state has already been created 
+    # Creating s3 teraform statefile as an backup ensure terraform state is stored and handled properly
     bucket = "terraform-state-bucket-dmo"
     key    = "terraform-stack"
     region = "ap-southeast-2"
-    # Update Profile dependent on AWS Organisation / Account 
+    # Update Profile as required
     profile = "saml"
   }
 }
