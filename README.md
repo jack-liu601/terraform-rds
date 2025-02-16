@@ -43,9 +43,9 @@ Therefore the focus will be on creating & deploying a RDS instance & related res
 ### How to Deploy 
 #### Pre-requisite: 
 Based on the brief there are 3 required variables in order to successfully deploy this terraform stack:. 
-1. rds_vpc_id
-2. rds_subnet_ids
-3. app_role_name
+1. rds_vpc_id - VPC ID for RDS VPC 
+2. rds_subnet_ids - Subnet IDs of the RDS VPC for rds databse
+3. app_role_name - Name of the role that EKS application intends to assume to connect to the database i.e. application/example-app
 
 A preferred method of deployment will be by creating an .tfvars file for a easy smooth deployment 
 
