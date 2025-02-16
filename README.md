@@ -1,3 +1,6 @@
+## Objective:
+Create a RDS instance and related resources using terraform for an application that’s deployed in the EKS cluster.
+
 ## Background: 
 Assumptions: <br />
 VPCS: <br />
