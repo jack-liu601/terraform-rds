@@ -24,6 +24,7 @@ resource "aws_db_instance" "prod_rds_instance" {
   iam_database_authentication_enabled = true
   username                            = "dbsuperuser"
   manage_master_user_password         = true
+  storage_encrypted                   = true
   tags = {
     Name = "prod-devops-rds-instance"
   }
