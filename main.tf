@@ -1,7 +1,7 @@
 /*
   Justification:
   Selected m series graviton instance type due to cost and performance versus the rest of the instance type.
-  The brief does not have an requirement in terms of instance type. 
+  The brief does not have an requirement in terms of instance type. Therefore, opted for general purpose instead of compute / memory type instance which comes does come with more cost.
   In addition gp3 storage type over io1 / io2 due to cost as there was no requirement for max iops but only min. 13000 IOPS
 */
 
